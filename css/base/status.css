@@ -1,0 +1,43 @@
+.t-status-conatiner {
+    display: flex;
+}
+
+.t-status {
+    width: 100px;
+    height: 32px;
+    font-size: 11px;
+    line-height: 32px;
+    border-radius: 4px;
+    text-align: center;
+
+    /* extend */
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+.t-status-denied {
+    background-color: #FFEBEB;
+    color: #F65454;
+}
+
+.t-status-approved {
+    background-color: #EBF9F4;
+    color: #01B075;
+}
+
+.t-status-sent {
+    background-color: #EBF4FF;
+    color: #0075FF;
+}
+
+.t-status-lack {
+    background-color: #FFF3EB;
+    color: #FF6900;
+}
+
+.t-status-unsent {
+    background-color: #E5E5E5;
+    color: #454545;
+}
+
+

@@ -1,0 +1,95 @@
+#t-content {
+    width: 100%;
+    height: calc(100% - 48px);
+}
+
+#t-content > div {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+#t-content .t-right-8 {
+    margin-right: 8px;
+}
+
+#t-content .t-right-16 {
+    margin-right: 16px;
+}
+
+
+/* Content top */
+#t-content .t-content-top {
+    margin-top: 24px;
+}
+
+#t-content .t-top-upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#t-content .t-header-title {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#t-content .t-add-employee {
+
+}
+
+#t-content .t-top-lower {
+    margin-top: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#t-content .t-header-filter {
+    display: flex;
+    align-items: center;
+}
+
+#t-content .t-header-refresh {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background: url('../../content/icon/refresh.png') center no-repeat;
+    background-size: 24px 24px;
+    background-color: #E9EBEE;
+}
+
+#t-content .t-header-refresh:hover {
+    cursor: pointer;
+    background-color: #e5e5e5;
+}
+
+
+/* Content center */
+#t-content .t-content-center {
+    height: 480px;
+    margin-top: 8px;
+    overflow: scroll;
+}
+
+/* Content bottom */
+#t-content .t-content-bottom {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+}
+
+#t-content .t-count-left {
+    min-width: 18%;
+    text-align: start;
+    margin-left: 16px;
+}
+
+#t-content .t-count-right {
+    min-width: 18%;
+    text-align: end;
+    margin-right: 16px;
+}
+
+
+
+

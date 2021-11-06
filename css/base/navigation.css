@@ -1,0 +1,60 @@
+.t-nav-container {
+    display: flex;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+}
+
+.t-icon-size {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.t-icon-size:active {
+    background-color: #dddddd;
+}
+
+.t-first-page {
+    background: url('../../content/icon/btn-firstpage.svg') center no-repeat;
+    margin-right: 24px;
+}
+
+.t-last-page {
+    background: url('../../content/icon/btn-lastpage.svg') center no-repeat;
+    margin-left: 24px;
+}
+
+.t-prev-page {
+    background: url('../../content/icon/btn-prev-page.svg') center no-repeat;
+    margin-right: 8px;
+}
+
+.t-next-page {
+    background: url('../../content/icon/btn-next-page.svg') center no-repeat;
+    margin-left: 8px;
+}
+
+.t-select-page {
+    display: flex;
+    width: 140px;
+    justify-content: space-evenly;
+}
+
+.t-page-item {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.t-page-item:hover {
+    background-color: #dddddd;
+    cursor: pointer;
+}
+
+
+

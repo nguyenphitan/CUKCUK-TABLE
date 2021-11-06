@@ -1,0 +1,9 @@
+.t-row {
+    margin-top: 4px;
+    width: 100%;
+}
+
+.t-label {
+    text-transform: uppercase;
+    font-weight: bold;
+}

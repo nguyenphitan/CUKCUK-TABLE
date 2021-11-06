@@ -1,0 +1,14 @@
+#t-container {
+    display: flex;
+}
+
+#t-left {
+    width: 226px;
+    height: 100vh;
+    border-right: 1px solid #bbbbbb;
+}
+
+#t-right {
+    width: calc(100% - 226px);
+    height: 100vh;
+}

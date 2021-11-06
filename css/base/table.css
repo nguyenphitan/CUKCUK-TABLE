@@ -1,0 +1,62 @@
+.t-column-50 {
+    width: 50px;
+}
+
+.t-column-100 {
+    width: 100px;
+}
+
+.t-column-150 {
+    width: 150px;
+}
+
+/* table */
+
+.t-table {
+    border-collapse: collapse;
+}
+
+.t-table th, .t-table td {
+    height: 48px;
+    text-align: left;
+}
+
+.t-table tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.t-column-name {
+    display: inline-block;
+}
+
+.t-table-body :nth-child(1) {
+    width: 20px;
+}
+
+/* checkbox */
+.t-table-checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 16px;
+    background-color: #ffffff;
+    border-color: #BBBBBB;
+    cursor: pointer;
+}
+
+/* icon */
+.t-column-icon {
+    color: #BBBBBB;
+    margin: 0 10px 0 8px;
+}
+
+.t-column-icon:hover {
+    cursor: pointer;
+    color: #666;
+}
+
+.t-column-icon:active {
+    color: #333;
+}
+
+
+

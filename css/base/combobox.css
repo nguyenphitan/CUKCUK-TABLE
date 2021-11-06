@@ -1,0 +1,12 @@
+.t-combobox {
+    height: 40px;
+    border: 1px solid #BBBBBB;
+    border-radius: 4px;
+    min-width: 100px;
+    padding: 0 12px;
+    outline: unset;
+}
+
+.t-combobox:hover {
+    border-color: #019160;
+}

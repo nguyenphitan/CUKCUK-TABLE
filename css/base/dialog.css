@@ -1,0 +1,112 @@
+/* common */
+.t-clear {
+    clear: both !important;
+}
+
+.t-dialog-warn {
+    color: #FF6900 !important;
+}
+
+.t-dialog-error {
+    color: #F65454 !important;
+}
+
+.t-dialog-success {
+    color: #019160 !important;
+}
+
+.t-dialog-24 {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+
+
+/* dialog */
+.t-dialog-conatiner {
+    width: 460px;
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+
+    /* extend */
+    margin-left: 16px;
+}
+
+/* close btn */
+.t-dialog-conatiner .t-dialog-close {
+    float: right;
+    padding: 4px;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.t-dialog-conatiner .t-dialog-close .t-dialog-times {
+    font-size: 16px;
+}
+
+/* header */
+.t-dialog-conatiner .t-dialog-header {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* content */
+.t-dialog-conatiner .t-dialog-content {
+    display: flex;
+    margin-top: 24px;
+}
+
+.t-dialog-content .t-dialog-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #E5E5E5;
+}
+
+/* footer */
+.t-dialog-conatiner .t-dialog-footer {
+    margin-top: 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #E5E5E5;
+}
+
+.t-dialog-footer .t-dialog-btn {
+    height: 40px;
+    border-radius: 4px;
+    padding: 0 16px;
+    line-height: 40px;
+}
+
+.t-dialog-btn1 {
+    margin-right: 16px;
+    color: #000000;
+}
+
+.t-dialog-btn2 {
+    margin-right: 24px;
+    color: #ffffff;
+    background-color: #019160;
+}
+
+.t-dialog-footer .t-dialog-btn1:hover {
+    background-color: #BBBBBB;
+    cursor: pointer;
+}
+
+.t-dialog-footer .t-dialog-btn2:hover {
+    background-color: #2FBE8E;
+    cursor: pointer;
+}
+
+
+
+
+
+

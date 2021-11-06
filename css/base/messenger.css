@@ -1,0 +1,74 @@
+/* common color */
+.t-messenger-error {
+    color: #F65454;
+}
+
+.t-messenger-warn {
+    color: #FF6900;
+}
+
+.t-messenger-success {
+    color: #019160;
+}
+
+.t-messenger-info {
+    color: #0075FF;
+}
+
+
+/* container */
+
+.t-messenger-conatiner {
+    position: fixed;
+    top: 0;
+    right: 16px;
+    
+    /* extend */
+    margin-left: 16px;
+}
+
+.t-messenger-box {
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+    max-width: 310px;
+    height: 48px;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    margin-bottom: 16px;
+}
+
+.t-messenger-content {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: 28px;
+}
+
+.t-messenger-icon {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.t-messenger-close {
+    cursor: pointer;
+    position: absolute;
+    right: 8px;
+    font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

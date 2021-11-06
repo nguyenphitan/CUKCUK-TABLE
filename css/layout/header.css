@@ -1,0 +1,80 @@
+#t-header {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+#t-header .t-right-16 {
+    margin-right: 16px;
+}
+
+/* branch */
+#t-header .t-header-branch {
+    display: flex;
+    align-items: center;
+}
+
+#t-header .t-branch-icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 24px;
+    margin-right: 10px;
+    background-color: #E9EBEE;
+    border-radius: 4px;
+
+    /* extend */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: rgb(94, 94, 235);
+}
+
+#t-header .t-branch-name {
+    font-weight: bold;
+}
+
+#t-header .t-branch-more {
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* user */
+#t-header .t-header-user {
+    display: flex;
+    align-items: center;
+}
+
+#t-header .t-bell-icon {
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 8px;
+
+    /* extend */
+    font-size: 16px;
+}
+
+#t-header .t-user-avatar {
+    width: 32px;
+    height: 32px;
+    background: url('../../content/icon/avatar-default.png') left no-repeat;
+    background-size: contain;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+#t-header .t-user-name {
+    margin-right: 16px;
+}
+
+#t-header .t-user-more {
+    width: 16px;
+    height: 24px;
+    background: url('../../content/icon/option.png') left no-repeat;
+    background-size: contain;
+    margin-right: 16px;
+    cursor: pointer;
+}

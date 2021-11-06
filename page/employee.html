@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div id="t-container">
+        <!-- left -->
+        <div id="t-left">
+            <div id="t-navbar">
+                <div class="t-navbar-item">
+                    <div class="t-navbar-icon t-menu-icon"></div>
+                    <div class="t-navbar-title t-logo-icon"></div>
+                </div>
+                <div class="t-navbar-item">
+                    <div class="t-navbar-icon t-overview-icon"></div>
+                    <div class="t-navbar-title">Tổng quan</div>
+                </div>
+                <div class="t-navbar-item">
+                    <div class="t-navbar-icon t-report-icon"></div>
+                    <div class="t-navbar-title">Báo cáo</div>
+                </div>
+                <div class="t-navbar-item">
+                    <div class="t-navbar-icon t-buy-icon"></div>
+                    <div class="t-navbar-title">Mua hàng</div>
+                </div>
+                <div class="t-navbar-item">
+                    <div class="t-navbar-icon t-employee-icon"></div>
+                    <div class="t-navbar-title">Danh mục nhân viên</div>
+                </div>
+                <div class="t-navbar-item">
+                    <div class="t-navbar-icon t-setting-icon"></div>
+                    <div class="t-navbar-title">Thiết lập hệ thống</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- right -->
+        <div id="t-right">
+            <!-- Begin header -->
+            <div id="t-header">
+                <div class="t-header-branch">
+                    <div class="t-branch-icon">MB</div>
+                    <div class="t-branch-name">Chi nhánh MISA miền Bắc</div>
+                    <div class="t-branch-more"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                
+                <div class="t-header-user">
+                    <div class="t-bell-icon"><i class="fal fa-bell"></i></div>
+                    <div class="t-user-avatar"></div>
+                    <div class="t-user-name">Nguyễn Phi Tân</div>
+                    <div class="t-user-more"></div>
+                </div>
+            </div>
+            <!-- End header -->
+
+            <!-- Begin content -->
+            <div id="t-content">
+                <!-- Content top -->
+                <div class="t-content-top">
+                    <!-- Upper -->
+                    <div class="t-top-upper">
+                        <div class="t-header-title">Danh sách nhân viên</div>
+                        <!-- Add employee button -->
+                        <div class="t-add-employee">
+                            <div class="t-row">
+                                <button class="t-btn">
+                                    <div class="t-btn-icon t-icon t-icon-add-employee"></div>
+                                    <div class="t-btn-text">Thêm nhân viên</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End upper -->
+                    
+                    <!-- Lower -->
+                    <div class="t-top-lower">
+                        <div class="t-header-filter">
+                            <!-- Tìm kiếm -->
+                            <div class="t-row">
+                                <input type="text" class="t-input t-input-icon t-right-8" placeholder="Tìm kiếm theo Mã, Tên hoặc Số Điện Thoại">
+                            </div>
+
+                            <!-- Filter -->
+                            <div class="t-row">
+                                <select class="t-combobox t-right-8" name="" id="">
+                                    <option value="">Tất cả phòng ban</option>
+                                    <option value="">...</option>
+                                </select>
+                            </div>
+
+                            <!-- Filter -->
+                            <div class="t-row">
+                                <select class="t-combobox" name="" id="">
+                                    <option value="">Tất cả vị trí</option>
+                                    <option value="">...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Refresh -->
+                        <div class="t-header-refresh"></div>
+                    </div>
+                    <!-- End lower -->
+                </div>
+                <!-- End content top -->
+
+                <!-- Content center -->
+                <div class="t-content-center">
+                    <!-- Table -->
+                    <div class="t-row">
+                        <table class="t-row t-table">
+                            <tr class="t-table-head">
+                                <th></th>
+                                <th class="t-table-title t-column-50">
+                                    <div class="t-column-name">#</div>
+                                </th>
+                                <th class="t-table-title t-column-100">
+                                    <div class="t-column-name">Mã nhân viên</div>
+                                    <i class="fas fa-sort t-column-icon"></i>
+                                </th>
+                                <th class="t-table-title t-column-150">
+                                    <div class="t-column-name">Họ và tên</div>
+                                    <i class="fas fa-sort t-column-icon"></i>
+                                </th>
+                                <th class="t-table-title t-column-100">
+                                    <div class="t-column-name">Vị trí/Chức vụ</div>
+                                    <i class="fas fa-sort t-column-icon"></i>
+                                </th>
+                                <th class="t-table-title t-column-150">
+                                    <div class="t-column-name">Bộ phận/Phòng ban</div>
+                                    <i class="fas fa-sort t-column-icon"></i>
+                                </th>
+                            </tr>
+            
+                            <!-- body -->
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>1</td>
+                                <td>0342366513</td>
+                                <td>Nguyễn Hương Giang</td>
+                                <td>Tổng giám đốc</td>
+                                <td>Tổng công ty</td>
+                            </tr>
+            
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>2</td>
+                                <td>0123456789</td>
+                                <td>Nguyễn Thạc Hương</td>
+                                <td>Phó giám đốc</td>
+                                <td>Khối sản xuất</td>
+                            </tr>
+            
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>3</td>
+                                <td>0346579456</td>
+                                <td>Hoàng Văn Nam</td>
+                                <td>Trưởng phòng</td>
+                                <td>Văn phòng Sale</td>
+                            </tr>
+
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>4</td>
+                                <td>0342366513</td>
+                                <td>Nguyễn Hương Giang</td>
+                                <td>Tổng giám đốc</td>
+                                <td>Tổng công ty</td>
+                            </tr>
+            
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>5</td>
+                                <td>0123456789</td>
+                                <td>Nguyễn Thạc Hương</td>
+                                <td>Phó giám đốc</td>
+                                <td>Khối sản xuất</td>
+                            </tr>
+            
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>6</td>
+                                <td>0346579456</td>
+                                <td>Hoàng Văn Nam</td>
+                                <td>Trưởng phòng</td>
+                                <td>Văn phòng Sale</td>
+                            </tr>
+
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>7</td>
+                                <td>0342366513</td>
+                                <td>Nguyễn Hương Giang</td>
+                                <td>Tổng giám đốc</td>
+                                <td>Tổng công ty</td>
+                            </tr>
+            
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>8</td>
+                                <td>0123456789</td>
+                                <td>Nguyễn Thạc Hương</td>
+                                <td>Phó giám đốc</td>
+                                <td>Khối sản xuất</td>
+                            </tr>
+            
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>9</td>
+                                <td>0346579456</td>
+                                <td>Hoàng Văn Nam</td>
+                                <td>Trưởng phòng</td>
+                                <td>Văn phòng Sale</td>
+                            </tr>
+
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>10</td>
+                                <td>0342366513</td>
+                                <td>Nguyễn Hương Giang</td>
+                                <td>Tổng giám đốc</td>
+                                <td>Tổng công ty</td>
+                            </tr>
+            
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>11</td>
+                                <td>0123456789</td>
+                                <td>Nguyễn Thạc Hương</td>
+                                <td>Phó giám đốc</td>
+                                <td>Khối sản xuất</td>
+                            </tr>
+            
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>12</td>
+                                <td>0346579456</td>
+                                <td>Hoàng Văn Nam</td>
+                                <td>Trưởng phòng</td>
+                                <td>Văn phòng Sale</td>
+                            </tr>
+
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>13</td>
+                                <td>0342366513</td>
+                                <td>Nguyễn Hương Giang</td>
+                                <td>Tổng giám đốc</td>
+                                <td>Tổng công ty</td>
+                            </tr>
+            
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>14</td>
+                                <td>0123456789</td>
+                                <td>Nguyễn Thạc Hương</td>
+                                <td>Phó giám đốc</td>
+                                <td>Khối sản xuất</td>
+                            </tr>
+            
+                            <tr class="t-table-body">
+                                <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
+                                <td>15</td>
+                                <td>0346579456</td>
+                                <td>Hoàng Văn Nam</td>
+                                <td>Trưởng phòng</td>
+                                <td>Văn phòng Sale</td>
+                            </tr>
+            
+                        </table>
+                        
+                    </div>
+                    <!-- End table -->
+                </div>
+                <!-- End content center -->
+
+                <!-- Content bottom -->
+                <div class="t-content-bottom">
+
+                    <div class="t-count-left">Hiển thị 1-15/1000 nhân viên</div>
+
+                    <!-- Navigation -->
+                    <div class="t-row">
+                        <div class="t-nav-container">
+            
+                            <div class="t-first-page t-icon-size"></div>
+                            <div class="t-prev-page t-icon-size"></div>
+            
+                            <div class="t-select-page">
+                                <div class="t-page-item">1</div>
+                                <div class="t-page-item">2</div>
+                                <div class="t-page-item">3</div>
+                                <div class="t-page-item">4</div>
+                            </div>
+            
+                            <div class="t-next-page t-icon-size"></div>
+                            <div class="t-last-page t-icon-size"></div>
+            
+                        </div>
+                    </div>
+                    <!-- End navigation -->
+
+                    <div class="t-count-right">15 nhân viên/trang</div>
+
+                </div>
+                <!-- End content bottom -->
+
+            </div>
+            <!-- End content -->
+        </div>
+    </div>
+
+
+    <!-- Js src -->
+    <script src="../js/app.js"></script>
+</body>
+</html>
