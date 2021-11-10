@@ -71,6 +71,34 @@
     overflow: scroll;
 }
 
+#t-content .t-refresh-table {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+#t-content .t-refresh-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 5px solid rgb(110, 108, 108);
+    border-top: 5px solid #01B075;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: refresh 1s linear infinite;
+}
+
+@keyframes refresh {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+
 /* Content bottom */
 #t-content .t-content-bottom {
     margin-top: 8px;
