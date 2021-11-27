@@ -30,11 +30,11 @@
                     <div class="t-navbar-icon t-buy-icon"></div>
                     <div class="t-navbar-title">Mua hàng</div>
                 </div>
-                <a class="t-navbar-item" href="customer.html">
+                <a class="t-navbar-item">
                     <div class="t-navbar-icon t-employee-icon"></div>
                     <div class="t-navbar-title">Danh mục khách hàng</div>
                 </a>
-                <a class="t-navbar-item">
+                <a class="t-navbar-item" href="employee.html">
                     <div class="t-navbar-icon t-employee-icon"></div>
                     <div class="t-navbar-title">Danh mục nhân viên</div>
                 </a>
@@ -70,13 +70,13 @@
                 <div class="t-content-top">
                     <!-- Upper -->
                     <div class="t-top-upper">
-                        <div class="t-header-title">Danh sách nhân viên</div>
+                        <div class="t-header-title">Danh sách khách hàng</div>
                         <!-- Add employee button -->
                         <div class="t-add-employee">
                             <div class="t-row">
                                 <button class="t-btn">
                                     <div class="t-btn-icon t-icon t-icon-add-employee"></div>
-                                    <div class="t-btn-text">Thêm nhân viên</div>
+                                    <div class="t-btn-text">Thêm khách hàng</div>
                                 </button>
                             </div>
                         </div>
@@ -88,23 +88,7 @@
                         <div class="t-header-filter">
                             <!-- Tìm kiếm -->
                             <div class="t-row">
-                                <input type="text" class="t-input t-input-icon t-right-8" placeholder="Tìm kiếm theo Mã, Tên hoặc Số Điện Thoại">
-                            </div>
-
-                            <!-- Filter -->
-                            <div class="t-row">
-                                <select class="t-combobox t-right-8" name="" id="">
-                                    <option value="">Tất cả phòng ban</option>
-                                    <option value="">...</option>
-                                </select>
-                            </div>
-
-                            <!-- Filter -->
-                            <div class="t-row">
-                                <select class="t-combobox" name="" id="">
-                                    <option value="">Tất cả vị trí</option>
-                                    <option value="">...</option>
-                                </select>
+                                <input id="txtSearch" type="text" class="t-input t-input-icon t-right-8" placeholder="Tìm kiếm theo họ và tên">
                             </div>
                         </div>
                         <!-- Refresh -->
@@ -119,37 +103,29 @@
                 <div class="t-content-center">
                     <!-- Table -->
                     <div class="t-row">
-                        <table id="t-table-employee" class="t-row t-table" entityId="EmployeeId">
+                        <table id="t-table-customer" class="t-row t-table" entityId="CustomerId">
                             <!-- thead -->
                             <thead>
                                 <tr class="t-table-head">
-                                    <th class="t-table-title t-column-100 t-left-16" fieldValue="EmployeeCode">
-                                        <div class="t-column-name t-employee-code">Mã nhân viên</div>
+                                    <th class="t-table-title t-column-100 t-left-16" fieldValue="CustomerCode">
+                                        <div class="t-column-name t-employee-code">Mã khách hàng</div>
                                         <i class="fas fa-sort t-column-icon"></i>
                                     </th>
                                     <th class="t-table-title t-column-150" fieldValue="FullName">
                                         <div class="t-column-name">Họ và tên</div>
                                         <i class="fas fa-sort t-column-icon"></i>
                                     </th>
-                                    <th class="t-table-title t-column-100" fieldValue="GenderName">
-                                        <div class="t-column-name">Giới tính</div>
+                                    <th class="t-table-title t-column-150" fieldValue="Email">
+                                        <div class="t-column-name">Email</div>
                                         <i class="fas fa-sort t-column-icon"></i>
                                     </th>
-                                    <th class="t-table-title t-column-100" fieldValue="DateOfBirth" formatType="date">
-                                        <div class="t-column-name">Ngày Sinh</div>
-                                        <i class="fas fa-sort t-column-icon"></i>
-                                    </th>
-                                    <th class="t-table-title t-column-150 t-align-left" fieldValue="DepartmentName">
-                                        <div class="t-column-name">Bộ phận/Phòng ban</div>
-                                        <i class="fas fa-sort t-column-icon"></i>
-                                    </th>
-                                    <th class="t-table-title t-column-100 t-employee-salary" fieldValue="Salary" formatType="money">
-                                        <div class="t-column-name">Lương Cơ Bản</div>
+                                    <th class="t-table-title t-column-150" fieldValue="Address">
+                                        <div class="t-column-name">Địa chỉ</div>
                                         <i class="fas fa-sort t-column-icon"></i>
                                     </th>
                                 </tr>
                             </thead>
-
+                            
                             <!-- tbody -->
                             <tbody>
 
@@ -165,7 +141,7 @@
                 <!-- Content bottom -->
                 <div class="t-content-bottom">
 
-                    <div class="t-count-left">Hiển thị 1-15/1000 nhân viên</div>
+                    <div class="t-count-left">Hiển thị 1-15/1000 khách hàng</div>
 
                     <!-- Navigation -->
                     <div class="t-row">
@@ -188,7 +164,14 @@
                     </div>
                     <!-- End navigation -->
 
-                    <div class="t-count-right">15 nhân viên/trang</div>
+                    <div class="t-count-right">
+                        <select id="cbxPageSize" class="t-combobox" name="">
+                            <option value="10">10 nhân viên/trang</option>
+                            <option value="20">20 nhân viên/trang</option>
+                            <option value="30">30 nhân viên/trang</option>
+                            <option value="40">40 nhân viên/trang</option>
+                        </select>
+                    </div>
 
                 </div>
                 <!-- End content bottom -->
@@ -200,10 +183,10 @@
             <div class="t-dialog-add">
                 <div class="t-dialog-container">
                     <div class="t-close-dialog"><i class="far fa-times"></i></div>
-                    <div class="t-dialog-header">Thêm nhân viên</div>
+                    <div class="t-dialog-header">Thêm khách hàng</div>
                     <div class="t-dialog-row">
                         <div class="t-dialog-input">
-                            <div class="t-input-title">Mã nhân viên</div>
+                            <div class="t-input-title">Mã khách hàng</div>
                             <input id="t-employeeCode-txt" type="text" class="t-input-info" placeholder="Nhập thông tin..." fieldName="EmployeeCode">
                         </div>
                         <div class="t-dialog-input">
@@ -367,8 +350,7 @@
     <script src="../js/base/base.js"></script>
 
     <!-- Js dùng riêng -->
-    <!-- <script src="../js/base/employee.js"></script> -->
-    <script src="../js/page/employee.js"></script>
+    <script src="../js/page/customer.js"></script>
 
 </body>
 </html>

@@ -7,11 +7,12 @@
 @import url('./base/navigation.css');
 @import url('./base/status.css');
 @import url('./base/messenger.css');
-@import url('./base/dialog.css');
+@import url('./base/chip_status.css');
 @import url('./layout/navbar.css');
 @import url('./layout/header.css');
 @import url('./layout/content.css');
 @import url('./layout/container.css');
+@import url('./base/dialog.css');
 
 
 * {

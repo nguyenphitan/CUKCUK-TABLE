@@ -1,126 +1,81 @@
-let employees = [
-    {
-        ID: 1,
-        EmployeeCode: "0342366513",
-        FullName: "Nguyễn Phi Tân",
-        Position: "Giám đốc",
-        Part: "Tổng công ty"
-    },
-    {
-        ID: 2,
-        EmployeeCode: "0342366513",
-        FullName: "Nguyễn Thạc Hương",
-        Position: "Phó giám đốc",
-        Part: "Tổng công ty"
-    },
-    {
-        ID: 3,
-        EmployeeCode: "0342366513",
-        FullName: "Nguyễn Văn A",
-        Position: "Quản lý",
-        Part: "Tổng công ty"
-    },
-    {
-        ID: 4,
-        EmployeeCode: "0342366513",
-        FullName: "Tạ Thị Trang",
-        Position: "Trưởng phòng",
-        Part: "Sale"
-    },
-    {
-        ID: 5,
-        EmployeeCode: "0342366513",
-        FullName: "Nguyễn Phi Tân",
-        Position: "Giám đốc",
-        Part: "Tổng công ty"
-    },
-    {
-        ID: 6,
-        EmployeeCode: "0342366513",
-        FullName: "Nguyễn Thạc Hương",
-        Position: "Phó giám đốc",
-        Part: "Tổng công ty"
-    },
-    {
-        ID: 7,
-        EmployeeCode: "0342366513",
-        FullName: "Nguyễn Văn A",
-        Position: "Quản lý",
-        Part: "Tổng công ty"
-    },
-    {
-        ID: 8,
-        EmployeeCode: "0342366513",
-        FullName: "Tạ Thị Trang",
-        Position: "Trưởng phòng",
-        Part: "Sale"
-    },
-    {
-        ID: 9,
-        EmployeeCode: "0342366513",
-        FullName: "Nguyễn Phi Tân",
-        Position: "Giám đốc",
-        Part: "Tổng công ty"
-    },
-    {
-        ID: 10,
-        EmployeeCode: "0342366513",
-        FullName: "Nguyễn Thạc Hương",
-        Position: "Phó giám đốc",
-        Part: "Tổng công ty"
-    },
-    {
-        ID: 11,
-        EmployeeCode: "0342366513",
-        FullName: "Nguyễn Văn A",
-        Position: "Quản lý",
-        Part: "Tổng công ty"
-    },
-    {
-        ID: 12,
-        EmployeeCode: "0342366513",
-        FullName: "Tạ Thị Trang",
-        Position: "Trưởng phòng",
-        Part: "Sale"
-    },
-    {
-        ID: 13,
-        EmployeeCode: "0342366513",
-        FullName: "Nguyễn Phi Tân",
-        Position: "Giám đốc",
-        Part: "Tổng công ty"
-    },
-    {
-        ID: 14,
-        EmployeeCode: "0342366513",
-        FullName: "Nguyễn Thạc Hương",
-        Position: "Phó giám đốc",
-        Part: "Tổng công ty"
-    },
-    {
-        ID: 15,
-        EmployeeCode: "0342366513",
-        FullName: "Nguyễn Văn A",
-        Position: "Quản lý",
-        Part: "Tổng công ty"
-    }
-]
-
 $(document).ready(() => {
-    tableRender();
+    loadData();
+    addEmployee();
 })
 
 
-function initTable() {
+// Lấy dữ liệu từ server: 
 
-    let tr = 
-        `<tr class="t-table-head">
-        <th></th>
-        <th class="t-table-title t-column-50">
-            <div class="t-column-name">#</div>
-        </th>
-        <th class="t-table-title t-column-100">
-            <div class="t-column-name">Mã nhân viên</div>
+function loadData() {
+
+    // Lấy dữ liệu:
+    // gọi lên API thực hiện lấy dữ liệu -> sử dụng jquery ajax
+    let employees = [];
+
+    $("#t-table-employee").empty();
+    initTable();
+    $(".t-refresh").show();
+
+    $.ajax({
+        type: "GET",
+        url: "http://cukcuk.manhnv.net/api/v1/Employees",
+        // data: "data",        // tham số truyền lên cho api
+        // dataType: "json",
+        // dataType: "application/json",
+        async: true,
+        success: function (response) {
+            employees = response;
+
+            // render table
+            $.each(employees, function (indexInArray, employee) { 
+                let employeeCode = employee.EmployeeCode;
+                let fullname = employee.FullName;
+                let gender = employee.GenderName;
+                let dateOfBirth = employee.DateOfBirth;
+                let salary = employee.Salary;
+                let DepartmentName = employee.DepartmentName;
+
+                // Xử lí / định dạng dữ liệu:
+                // Định dạng ngày tháng: (Ngày/Tháng/Năm)
+                dateOfBirth = new Date(dateOfBirth);
+                let date = dateOfBirth.getDate();   // ngày
+                date = date < 10 ?`0${date}` : date;
+                let month = dateOfBirth.getMonth() + 1; // tháng
+                month = month < 10 ?`0${month}` : month;
+                let year = dateOfBirth.getFullYear(); // năm
+                dateOfBirth = `${date}/${month}/${year}`;
+
+                // Định dạng tiền tệ:
+                salary = new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'}).format(salary);
+                
+                let tr = `
+                <tr class="t-table-body color-red">
+                    <td class="t-employee-code">${employeeCode}</td>
+                    <td class="t-employee-fullname">${fullname}</td>
+                    <td class="t-employee-code">${gender || ""}</td>
+                    <td class="t-employee-date">${dateOfBirth}</td>
+                    <td class="t-employee-part t-align-left">${DepartmentName}</td>
+                    <td class="t-employee-salary">${salary}</td>
+                </tr>`;
+
+                $("#t-table-employee").append(tr);
+
+            });
+            
+            $(".t-refresh").hide();
+        },
+        error: function(reject) {
+            alert('Có lỗi xảy ra');
+        }
+    });
+
+}
+
+// Khởi tạo các column của bảng
+function initTable() {
+    let tr = `<tr class="t-table-head">
+        <th class="t-table-title t-column-100 t-left-16">
+            <div class="t-column-name t-employee-code">Mã nhân viên</div>
             <i class="fas fa-sort t-column-icon"></i>
         </th>
         <th class="t-table-title t-column-150">
@@ -128,66 +83,127 @@ function initTable() {
             <i class="fas fa-sort t-column-icon"></i>
         </th>
         <th class="t-table-title t-column-100">
-            <div class="t-column-name">Vị trí/Chức vụ</div>
+            <div class="t-column-name">Giới tính</div>
             <i class="fas fa-sort t-column-icon"></i>
         </th>
-        <th class="t-table-title t-column-150">
+        <th class="t-table-title t-column-100">
+            <div class="t-column-name">Ngày Sinh</div>
+            <i class="fas fa-sort t-column-icon"></i>
+        </th>
+        <th class="t-table-title t-column-150 t-align-left">
             <div class="t-column-name">Bộ phận/Phòng ban</div>
             <i class="fas fa-sort t-column-icon"></i>
         </th>
-        </tr>`;
+        <th class="t-table-title t-column-100 t-employee-salary">
+            <div class="t-column-name">Lương Cơ Bản</div>
+            <i class="fas fa-sort t-column-icon"></i>
+        </th>
+    </tr>`;
 
     $("#t-table-employee").append(tr);
 }
 
-function tableRender() {
-    $("#t-table-employee").empty();
-    $(".t-refresh-table").show();
-    let tableEmployee = $("#t-table-employee");
-    setTimeout(function() {
-        initTable();
-        for(let employee of employees) {
-            let tr = 
-            `<tr class="t-table-body">
-            <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
-            <td>${employee.ID}</td>
-            <td>${employee.EmployeeCode}</td>
-            <td>${employee.FullName}</td>
-            <td>${employee.Position}</td>
-            <td>${employee.Part}</td>
-            </tr>`;
-    
-            $("#t-table-employee").append(tr);
-    
+
+// add employee
+
+function addEmployee() {
+    // show
+    $(".t-add-employee").click(function() {
+        $(".t-dialog-add").show();
+
+        // reset input
+        $("input").val(null);
+
+        // Lấy mã nhân viên mới và hiện thị lên ô nhập mã nhân viên
+        $.ajax({
+            type: "GET",
+            url: "http://cukcuk.manhnv.net/api/v1/Employees/NewEmployeeCode",
+            success: function (response) {
+                $("#t-employeeCode-txt").val(response);
+                // Focus vào ô nhập liệu đầu tiên
+                $("#t-employeeCode-txt").focus();
+            }
+        });
+    });
+
+    // hide
+    $(".t-dialog-btn .t-close-btn").click(function() {
+        $(".t-dialog-add").hide();
+    });
+
+    $(".t-close-dialog").click(function () { 
+        $(".t-dialog-add").hide();
+    });
+
+    // Thêm nhân viên
+    $(".t-add-btn").click(function() {
+        // thu thập các thông tin
+        const employeeCode = $("#t-employeeCode-txt").val();
+        const employeeFullName = $("#t-employeeFullName-txt").val();
+        const employeeGender = $("#t-employeeGender-txt").data('value');
+        const employeeDateOfBirth = $("#t-employeeDateOfBirth-txt").val();
+        const employeeDepartmentId = $("#t-employeeDepartmentId-txt").data('value');
+        const employeeSalary = $("#t-employeeSalary-txt").val();
+
+        // Build thành object nhân viên
+        let employee = {
+            "EmployeeCode": employeeCode,
+            "FullName": employeeFullName,
+            "Gender": employeeGender,
+            "DateOfBirth": employeeDateOfBirth,
+            "DepartmentId": employeeDepartmentId,
+            "Salary": employeeSalary
         }
-        $(".t-refresh-table").hide();
-    }, 2000);
+
+        // Sự dụng ajax gọi lên api rồi cất dữ liệu
+        $.ajax({
+            type: "POST",
+            url: "http://cukcuk.manhnv.net/api/v1/Employees",
+            data: JSON.stringify(employee),
+            async: false,
+            dataType: "json",
+            contentType:"application/json",
+            success: function (response) {
+                console.log(response);
+            },
+            error: function(reject) {
+                console.log(reject);
+            }
+        });
+
+        // Ẩn form chi tiết
+        $(".t-dialog-add").hide();
+
+        // Refresh lại dữ liệu
+        loadData();
+
+    });
+
+    // Load dữ liệu cho các combobox:
+    // Load dữ liệu phòng ban
+    loadDepartmentComboboxData();
 }
 
-function refreshTable() {
-    $(".t-header-refresh").click(function() {
-        $(".t-refresh-table").show();
-    })
+
+// load dữ liệu cho combobox phòng ban
+// create by T.A.N (14/11/2021)
+function loadDepartmentComboboxData() {
+    // Lấy dữ liệu về
+    $.ajax({
+        type: "GET",
+        url: "http://cukcuk.manhnv.net/api/v1/Departments",
+        success: function (response) {
+            // Buid combobox
+            for(const department of response) {
+                // let optionHTML = `<option value="${department.DepartmentId}">${department.DepartmentName}</option>`;
+                let optionHTML = `<div class="t-combobox-item" value="${department.DepartmentId}">${department.DepartmentName}</div>`
+                $("#t-employeeDepartmentId-txt .t-combobox-data").append(optionHTML);
+
+                let itemDataElements = $('#t-employeeDepartmentId-txt').find('.t-combobox-data').html();
+                $('#t-employeeDepartmentId-txt').data('itemDataElement', itemDataElements);
+            }
+        }
+    });
 }
-
-
-// Lấy dữ liệu từ server: 
-
-// $(document).ready(() => {
-//     $.ajax({
-//         type: "GET",
-//         url: "http://cukcuk.manhnv.net/api/v1/Employees",
-//         // data: "data",
-//         // dataType: "dataType",
-//         success: function (response) {
-//             console.table(response);
-//         },
-//         error: function (reject) {
-//             alert('Error!!!')
-//         }
-//     });
-// }) 
-
-
 
 

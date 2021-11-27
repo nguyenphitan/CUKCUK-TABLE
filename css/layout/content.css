@@ -3,6 +3,10 @@
     height: calc(100% - 48px);
 }
 
+.t-bg-red {
+    background-color: rgb(240, 87, 87) !important;
+}
+
 #t-content > div {
     margin-left: 16px;
     margin-right: 16px;
@@ -49,16 +53,16 @@
     align-items: center;
 }
 
-#t-content .t-header-refresh {
+#t-content .t-btn-delete {
     width: 40px;
     height: 40px;
     border-radius: 4px;
-    background: url('../../content/icon/refresh.png') center no-repeat;
+    background: url('../../content/icon/x.svg') center no-repeat;
     background-size: 24px 24px;
     background-color: #E9EBEE;
 }
 
-#t-content .t-header-refresh:hover {
+#t-content .t-btn-delete:hover {
     cursor: pointer;
     background-color: #e5e5e5;
 }
@@ -71,33 +75,27 @@
     overflow: scroll;
 }
 
-#t-content .t-refresh-table {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: none;
-}
-
-#t-content .t-refresh-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 5px solid rgb(110, 108, 108);
-    border-top: 5px solid #01B075;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    animation: refresh 1s linear infinite;
-}
-
 @keyframes refresh {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(360deg);}
 }
 
+#t-table-employee .t-table-body {
+    cursor: pointer;
+}
+
+#t-content .t-employee-code {
+    padding-left: 16px;
+}
+
+#t-content .t-employee-salary {
+    text-align: right;
+    padding-right: 16px;
+}
+
+#t-content .t-employee-salary i {
+    margin-right: 0;
+}
 
 /* Content bottom */
 #t-content .t-content-bottom {

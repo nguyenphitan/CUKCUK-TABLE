@@ -10,15 +10,23 @@
     width: 150px;
 }
 
+.t-left-16 {
+    margin-left: 16px;
+}
+
 /* table */
 
 .t-table {
     border-collapse: collapse;
 }
 
+.t-table th {
+    text-align: left;
+}
+
 .t-table th, .t-table td {
     height: 48px;
-    text-align: left;
+    /* color: red; */
 }
 
 .t-table tr:nth-child(even) {
@@ -29,9 +37,6 @@
     display: inline-block;
 }
 
-.t-table-body :nth-child(1) {
-    width: 20px;
-}
 
 /* checkbox */
 .t-table-checkbox {

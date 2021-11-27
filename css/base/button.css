@@ -1,6 +1,7 @@
 .t-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: #019160;
     border-radius: 4px;
     height: 40px;
@@ -9,7 +10,7 @@
     text-align: center;
     border: unset;
     cursor: pointer;
-    min-width: 100px;
+    /* min-width: 100px; */
     white-space: nowrap;
 }
 

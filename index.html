@@ -73,10 +73,6 @@
         <div class="t-row">
             <table class="t-row t-table">
                 <tr class="t-table-head">
-                    <th></th>
-                    <th class="t-table-title t-column-50">
-                        <div class="t-column-name">#</div>
-                    </th>
                     <th class="t-table-title t-column-100">
                         <div class="t-column-name">Mã nhân viên</div>
                         <i class="fas fa-sort t-column-icon"></i>
@@ -86,7 +82,11 @@
                         <i class="fas fa-sort t-column-icon"></i>
                     </th>
                     <th class="t-table-title t-column-100">
-                        <div class="t-column-name">Vị trí/Chức vụ</div>
+                        <div class="t-column-name">Ngày sinh</div>
+                        <i class="fas fa-sort t-column-icon"></i>
+                    </th>
+                    <th class="t-table-title t-column-100">
+                        <div class="t-column-name">Lương cơ bản</div>
                         <i class="fas fa-sort t-column-icon"></i>
                     </th>
                     <th class="t-table-title t-column-150">
@@ -96,32 +96,7 @@
                 </tr>
 
                 <!-- body -->
-                <tr class="t-table-body">
-                    <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
-                    <td>1</td>
-                    <td>0342366513</td>
-                    <td>Nguyễn Hương Giang</td>
-                    <td>Tổng giám đốc</td>
-                    <td>Tổng công ty</td>
-                </tr>
-
-                <tr class="t-table-body">
-                    <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
-                    <td>2</td>
-                    <td>0123456789</td>
-                    <td>Nguyễn Thạc Hương</td>
-                    <td>Phó giám đốc</td>
-                    <td>Khối sản xuất</td>
-                </tr>
-
-                <tr class="t-table-body">
-                    <td><input class="t-table-checkbox" type="checkbox" name="" id=""></td>
-                    <td>3</td>
-                    <td>0346579456</td>
-                    <td>Hoàng Văn Nam</td>
-                    <td>Trưởng phòng</td>
-                    <td>Văn phòng Sale</td>
-                </tr>
+                
 
             </table>
             
@@ -130,6 +105,7 @@
 
         </div>
     </div>
+    <br><br><br><br><br>
 
     <div class="t-row">
         <label for="" class="t-label">
@@ -221,21 +197,21 @@
 
     <br><br><br>
 
-    <div class="t-row">
+    <!-- <div class="t-row">
         <label for="" class="t-label">
             10. Chip-Status
         </label>
         <div class="t-row">
             <div class="t-dialog-conatiner">
 
-                <!-- close dialog -->
+                
                 <div class="t-dialog-close">
                     <i class="fal fa-times t-dialog-times"></i>
                 </div>
-                <!-- clear float -->
+                
                 <div class="t-clear"></div>
 
-                <!-- header dialog -->
+               
                 <div class="t-dialog-header t-dialog-24">Đóng Form thông tin chung</div>
                 <div class="t-dialog-content t-dialog-24">
                     <div class="t-dialog-status">
@@ -244,7 +220,6 @@
                     <div class="t-dialog-text">Bạn có chắc muốn đóng form đăng nhập <b>"Thông tin chung của thủ tục 603"</b> hay không?</div>
                 </div>
 
-                <!-- footer dialog -->
                 <div class="t-dialog-footer">
                     <div class="t-dialog-btn t-dialog-btn1">Tiếp tục nhập</div>
                     <div class="t-dialog-btn t-dialog-btn2">Đóng</div>
@@ -252,13 +227,13 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
 
     <br><br><br>
 
     <div class="t-row">
         <label for="" class="t-label">
-            5. Field Input Icon (Error)
+            11. Field Input Icon (Error)
         </label>
         <div class="t-row">
             <div class="t-error-box">
@@ -274,6 +249,55 @@
 
 
     <br><br><br><br><br><br><br><br>
+
+    <div class="t-row">
+        <label for="" class="t-label">
+            12. Dialog
+        </label>
+        <div class="t-dialog-add">
+            <div class="t-dialog-container">
+                <div class="t-close-dialog"><i class="far fa-times"></i></div>
+                <div class="t-dialog-header">Thêm nhân viên</div>
+                <div class="t-dialog-row">
+                    <div class="t-dialog-input">
+                        <div class="t-input-title">Mã nhân viên</div>
+                        <input type="text" class="t-input-info" placeholder="Nhập thông tin...">
+                    </div>
+                    <div class="t-dialog-input">
+                        <div class="t-input-title">Họ và tên</div>
+                        <input type="text" class="t-input-info" placeholder="Nhập thông tin...">
+                    </div>
+                </div>
+                <div class="t-dialog-row">
+                    <div class="t-dialog-input">
+                        <div class="t-input-title">Ngày sinh</div>
+                        <input type="text" class="t-input-info" placeholder="Nhập thông tin...">
+                    </div>
+                    <div class="t-dialog-input">
+                        <div class="t-input-title">Bộ phần/Phòng ban</div>
+                        <input type="text" class="t-input-info" placeholder="Nhập thông tin...">
+                    </div>
+                </div>
+                <div class="t-dialog-row">
+                    <div class="t-dialog-input">
+                        <div class="t-input-title">Lương cơ bản</div>
+                        <input type="text" class="t-input-info" placeholder="Nhập thông tin...">
+                    </div>
+                    <div class="t-dialog-input">
+                        <div class="t-input-title">Ghi chú khác</div>
+                        <input type="text" class="t-input-info" placeholder="Nhập thông tin...">
+                    </div>
+                </div>
+                
+                <!-- btn -->
+                <div class="t-dialog-btn">
+                    <button class="t-close-btn">Đóng</button>
+                    <button class="t-add-btn">Thêm</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 
 
 </body>

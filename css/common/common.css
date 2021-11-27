@@ -3,7 +3,47 @@
     width: 100%;
 }
 
+.t-w-50 {
+    width: 50%;
+}
+
 .t-label {
     text-transform: uppercase;
     font-weight: bold;
 }
+
+.t-align-left {
+    text-align: left;
+}
+
+.t-align-right {
+    text-align: right;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.t-refresh {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.t-refresh-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 5px solid rgb(110, 108, 108);
+    border-top: 5px solid #01B075;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: refresh 1s linear infinite;
+}
+
+
