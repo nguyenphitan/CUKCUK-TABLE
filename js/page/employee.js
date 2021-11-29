@@ -9,7 +9,7 @@ class EmployeePage extends BasePage {
     EmployeeIdSelected = null;
     constructor() {
         super("t-table-employee", "http://cukcuk.manhnv.net/api/v1/Employees")
-        // this.loadData();
+        this.loadData();
         this.initEvent();
     }
 
@@ -17,40 +17,40 @@ class EmployeePage extends BasePage {
      * Load dữ liệu
      * Author: NPTAN (19/11/2021)
      */
-    // loadData() {
-    //     // Clear dữ liệu cũ:
-    //     $("#t-table-employee tbody").empty();
-    //     // Gọi api thực hiện lấy dữ liệu về -> sử dụng ajax
-    //     $.ajax({
-    //         type: "GET",
-    //         url: "http://cukcuk.manhnv.net/api/v1/Employees",
-    //         success: function (response) {
-    //             if(response) {
-    //                 var employees = response;
-    //                 // Duyệt từng nhân viên có trong mảng:
-    //                 for (const employee of employees) {
-    //                     // Build từng tr và append vào tbody của table
-    //                     let tr = $(`
-    //                         <tr class="t-table-body color-red">
-    //                             <td class="t-employee-code">${employee.EmployeeCode}</td>
-    //                             <td class="t-employee-fullname">${employee.FullName}</td>
-    //                             <td class="t-employee-code">${employee.GenderName || ""}</td>
-    //                             <td class="t-employee-date">${CommonJS.formatDateDDMMYYYY(employee.DateOfBirth)}</td>
-    //                             <td class="t-employee-part t-align-left">${employee.DepartmentName}</td>
-    //                             <td class="t-employee-salary">${CommonJS.formatMoneyVND(employee.Salary)}</td>
-    //                         </tr>`);
+    loadData() {   
+        // Clear dữ liệu cũ:
+        $("#t-table-employee tbody").empty();
+        // Gọi api thực hiện lấy dữ liệu về -> sử dụng ajax
+        $.ajax({
+            type: "GET",
+            url: "http://cukcuk.manhnv.net/api/v1/Employees",
+            success: function (response) {
+                if(response) {
+                    var employees = response;
+                    // Duyệt từng nhân viên có trong mảng:
+                    for (const employee of employees) {
+                        // Build từng tr và append vào tbody của table
+                        let tr = $(`
+                            <tr class="t-table-body color-red">
+                                <td class="t-employee-code">${employee.EmployeeCode}</td>
+                                <td class="t-employee-fullname">${employee.FullName}</td>
+                                <td class="t-employee-gender">${employee.GenderName || ""}</td>
+                                <td class="t-employee-date">${CommonJS.formatDateDDMMYYYY(employee.DateOfBirth)}</td>
+                                <td class="t-employee-part t-align-left">${employee.DepartmentName}</td>
+                                <td class="t-employee-salary">${CommonJS.formatMoneyVND(employee.Salary)}</td>
+                            </tr>`);
 
-    //                     // Lưu trữ khóa chính của dòng dữ liệu hiện tại:
-    //                     tr.data('employeeId', employee.EmployeeId);
-    //                     tr.data('data', employee);
-    //                     $("#t-table-employee tbody").append(tr);
-    //                 }
-    //             }
-    //         }
-    //     });
+                        // Lưu trữ khóa chính của dòng dữ liệu hiện tại:
+                        tr.data('employeeId', employee.EmployeeId);
+                        tr.data('data', employee);
+                        $("#t-table-employee tbody").append(tr);
+                    }
+                }
+            }
+        });
 
-    //     // Build dữ liệu, hiển thị lên table:
-    // }
+        // Build dữ liệu, hiển thị lên table:
+    }
 
 
     /**
@@ -82,7 +82,7 @@ class EmployeePage extends BasePage {
 
     rowOnClick(sender) {
         let currentRow = sender.currentTarget;
-        let employeeId = $(currentRow).data('entityId');
+        let employeeId = $(currentRow).data('employeeId');  // entityId
         this.EmployeeIdSelected = employeeId;
         $(currentRow).siblings().removeClass('t-bg-red');
         $(currentRow).addClass('t-bg-red');
@@ -112,7 +112,7 @@ class EmployeePage extends BasePage {
     rowOnDbClick(sender) {
         this.FormMode = Enum.FormMode.Update;
         let currentRow = sender.currentTarget;
-        let employeeId = $(currentRow).data('entityId');
+        let employeeId = $(currentRow).data('employeeId');  // entityId
         this.EmployeeIdSelected = employeeId;
         // Gọi tới api lấy dữ liệu chi tiết của nhân viên
         $.ajax({
@@ -156,7 +156,7 @@ class EmployeePage extends BasePage {
                 employee[fieldName] = value;
             }
         }
-
+        
         // Duyệt các combobox:
         let comboboxs = $('.t-dialog-container div[tcombobox]');
         // Duyệt từng combobox thực hiện lấy ra value:

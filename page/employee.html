@@ -88,7 +88,7 @@
                         <div class="t-header-filter">
                             <!-- Tìm kiếm -->
                             <div class="t-row">
-                                <input type="text" class="t-input t-input-icon t-right-8" placeholder="Tìm kiếm theo Mã, Tên hoặc Số Điện Thoại">
+                                <input id="txtSearch" type="text" class="t-input t-input-icon t-right-8" placeholder="Tìm kiếm theo họ và tên">
                             </div>
 
                             <!-- Filter -->
@@ -188,7 +188,14 @@
                     </div>
                     <!-- End navigation -->
 
-                    <div class="t-count-right">15 nhân viên/trang</div>
+                    <div class="t-count-right">
+                        <select id="cbxPageSize" class="t-combobox" name="">
+                            <option value="10">10 nhân viên/trang</option>
+                            <option value="20">20 nhân viên/trang</option>
+                            <option value="30">30 nhân viên/trang</option>
+                            <option value="40">40 nhân viên/trang</option>
+                        </select>
+                    </div>
 
                 </div>
                 <!-- End content bottom -->
@@ -364,7 +371,7 @@
     <script src="../js/base/common.js"></script>
     <script src="../js/base/enum.js"></script>
     <script src="../lib/combobox/combobox.js"></script>
-    <script src="../js/base/base.js"></script>
+    {% comment %} <script src="../js/base/base.js"></script> {% endcomment %}
 
     <!-- Js dùng riêng -->
     <!-- <script src="../js/base/employee.js"></script> -->
